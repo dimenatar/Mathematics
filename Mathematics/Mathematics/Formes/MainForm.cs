@@ -28,5 +28,11 @@ namespace Mathematics
             NotLinearEqu notLinearEqu = new NotLinearEqu();
             notLinearEqu.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Integrals integrals = new Integrals();
+            integrals.ShowDialog();
+        }
     }
 }

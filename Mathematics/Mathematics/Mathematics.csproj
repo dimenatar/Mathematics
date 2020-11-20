@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\EquLoader.cs" />
+    <Compile Include="Classes\IntegralCalculations.cs" />
     <Compile Include="Classes\NewtonCalculations.cs" />
     <Compile Include="Formes\AuthorisationForm.cs">
       <SubType>Form</SubType>
@@ -56,6 +57,12 @@
     </Compile>
     <Compile Include="Classes\GaussEliminationHelper.cs" />
     <Compile Include="Classes\InversingHelp.cs" />
+    <Compile Include="Formes\Integrals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formes\Integrals.Designer.cs">
+      <DependentUpon>Integrals.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formes\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +93,9 @@
     <Compile Include="Classes\User.cs" />
     <EmbeddedResource Include="Formes\AuthorisationForm.resx">
       <DependentUpon>AuthorisationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formes\Integrals.resx">
+      <DependentUpon>Integrals.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formes\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
