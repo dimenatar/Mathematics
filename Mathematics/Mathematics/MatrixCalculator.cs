@@ -65,6 +65,24 @@ namespace Mathematics
             }
             return array;
         }
+        public static double[][] GridToArray(DataGridView dataGridView1, DataGridView dataGridView2)
+        {
+            double[][] array = new double[dataGridView1.RowCount][];
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                array[i] = new double[dataGridView1.ColumnCount+1];
+            }
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                {
+                    array[i][j] = int.Parse(dataGridView1.Rows[i].Cells[j].Value.ToString());
+                }
+                array[i][dataGridView1.RowCount] = int.Parse(dataGridView2.Rows[i].Cells[0].Value.ToString());
+                //MessageBox.Show(dataGridView2.Rows[i].Cells[0].Value.ToString());
+            }
+            return array;
+        }
         public static DataGridView ArrayToGrid(double[][] array, DataGridView dataGridView, int n, int m)
         {
             dataGridView.RowCount = n;
@@ -75,6 +93,14 @@ namespace Mathematics
                 {
                     dataGridView.Rows[i].Cells[j].Value = array[i][j];
                 }
+            }
+            return dataGridView;
+        }
+        public static DataGridView ArrayToGrid(double[] array, DataGridView dataGridView)
+        {
+            for (int i =0; i< dataGridView.ColumnCount; i ++)
+            {
+                dataGridView.Rows[1].Cells[i].Value = array[i];
             }
             return dataGridView;
         }
@@ -127,9 +153,23 @@ namespace Mathematics
     
             return dataGridView3;
         }
+        public static DataGridView InputX(DataGridView dataGridView)
+        {
+            for (int i =0; i < dataGridView.ColumnCount; i ++)
+            {
+                dataGridView.Rows[0].Cells[i].Value ="x" +(i + 1);
+            }
+            return dataGridView;
+        }
         public static DataGridView MatrixEquals(DataGridView dataGridView1, DataGridView dataGridView2, DataGridView dataGridView3)
         {
-
+            double[][] array = GridToArray(dataGridView1, dataGridView2);
+            double[] newArray = GaussEliminationHelper.SolveLinearEquations(array);
+            dataGridView3.RowCount = 2;
+            dataGridView3.ColumnCount = dataGridView2.RowCount;
+            dataGridView3 = InputX(dataGridView3);
+            dataGridView3 = ArrayToGrid(newArray, dataGridView3);
+            dataGridView3.Visible = true;
             return dataGridView3;
         }
     }

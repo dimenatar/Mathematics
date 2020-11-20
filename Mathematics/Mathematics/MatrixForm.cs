@@ -193,5 +193,14 @@ namespace Mathematics
                 dataGridView3 = MatrixCalculator.MatrixEquals(dataGridView1, dataGridView2, dataGridView3);
             }
         }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton4.Checked)
+            {
+                dataGridView2.ColumnCount = 1;
+                dataGridView2.RowCount = dataGridView1.RowCount;
+            }
+        }
     }
 }

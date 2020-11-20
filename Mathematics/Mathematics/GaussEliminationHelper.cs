@@ -8,7 +8,7 @@ namespace Mathematics
 {
     class GaussEliminationHelper
     {
-        private double[] SolveLinearEquations(string[] input)
+        public static double[] SolveLinearEquations(string[] input)
         {
             double[][] rows = new double[input.Length][];
             for (int i = 0; i < rows.Length; i++)
@@ -18,7 +18,7 @@ namespace Mathematics
             return SolveLinearEquations(rows);
         }
 
-        private double[] SolveLinearEquations(double[][] rows)
+        public static double[] SolveLinearEquations(double[][] rows)
         {
 
             int length = rows[0].Length;
@@ -63,7 +63,7 @@ namespace Mathematics
             return CalculateResult(rows);
         }
 
-        private bool Swap(double[][] rows, int row, int column)
+        public static bool Swap(double[][] rows, int row, int column)
         {
             bool swapped = false;
             for (int z = rows.Length - 1; z > row; z--)
@@ -80,7 +80,7 @@ namespace Mathematics
 
             return swapped;
         }
-        private double[] CalculateResult(double[][] rows)
+        public static double[] CalculateResult(double[][] rows)
         {
             double val = 0;
             int length = rows[0].Length;
@@ -102,7 +102,7 @@ namespace Mathematics
             return result;
         }
 
-        private bool IsValidResult(double result)
+        public static bool IsValidResult(double result)
         {
             return !(double.IsNaN(result) || double.IsInfinity(result));
         }
