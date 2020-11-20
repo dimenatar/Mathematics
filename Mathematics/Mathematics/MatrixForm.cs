@@ -10,38 +10,22 @@ using System.Windows.Forms;
 
 namespace Mathematics
 {
+    
     public partial class MatrixForm : Form
     {
-        public bool DoCheckVoid()
-        {
-            for (int i = 0; i < dataGridView1.RowCount; i ++)
-            {
-                for (int j =0; j < dataGridView1.ColumnCount; j ++)
-                {
-                    if (dataGridView1.Rows[i].Cells[j].Value ==  null || dataGridView1.Rows[i].Cells[j].Value == "")
-                    {
-                        MessageBox.Show("Незаполненные поля");
-                        return false;
-                    }
-                }
-            }
-            return true;
-        }
-        public void DoSub()
-        {
-            if (DoCheckVoid())
-            {
 
-            }
-        }
+
+
         private int FirstB = 0;
         private int SecondB = 2;
         private Random random;
+        MatrixAnswerForm matrixAnswerForm = new MatrixAnswerForm();
         public MatrixForm()
         {
             InitializeComponent();
             dataGridView1.Visible = false;
             dataGridView2.Visible = false;
+            dataGridView3.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -194,7 +178,19 @@ namespace Mathematics
         {
             if (radioButton1.Checked)
             {
-                DoSub();
+                dataGridView3 = MatrixCalculator.MatrixSub(dataGridView1, dataGridView2, dataGridView3);
+            }
+            else if (radioButton2.Checked)
+            {
+                dataGridView3= MatrixCalculator.MatrixInversion(dataGridView1, dataGridView3);
+            }
+            else if (radioButton3.Checked)
+            {
+                dataGridView3 = MatrixCalculator.MatrixMul(dataGridView1, dataGridView2, dataGridView3);
+            }
+            else if (radioButton4.Checked)
+            {
+                dataGridView3 = MatrixCalculator.MatrixEquals(dataGridView1, dataGridView2, dataGridView3);
             }
         }
     }
