@@ -12,6 +12,31 @@ namespace Mathematics
 {
     public partial class MatrixForm : Form
     {
+        public bool DoCheckVoid()
+        {
+            for (int i = 0; i < dataGridView1.RowCount; i ++)
+            {
+                for (int j =0; j < dataGridView1.ColumnCount; j ++)
+                {
+                    if (dataGridView1.Rows[i].Cells[j].Value ==  null || dataGridView1.Rows[i].Cells[j].Value == "")
+                    {
+                        MessageBox.Show("Незаполненные поля");
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        public void DoSub()
+        {
+            if (DoCheckVoid())
+            {
+
+            }
+        }
+        private int FirstB = 0;
+        private int SecondB = 2;
+        private Random random;
         public MatrixForm()
         {
             InitializeComponent();
@@ -103,11 +128,74 @@ namespace Mathematics
         {
             if (e.KeyChar == '-' || char.IsDigit(e.KeyChar))
             {
-                
                 e.Handled = false;
             }
             else e.Handled = true;
             
+        }
+
+
+        private void textBox7_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || (e.KeyChar == '-' && textBox7.TextLength == 0))
+            {
+                e.Handled = false;
+            }
+            else e.Handled = true;
+        }
+
+        private void textBox8_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || (e.KeyChar == '-' && textBox8.TextLength == 0))
+            {
+                e.Handled = false;
+            }
+            else e.Handled = true;
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                FirstB = int.Parse(textBox7.Text);
+            }
+            catch (Exception) { }
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                SecondB = int.Parse(textBox8.Text);
+            }
+            catch (Exception) { }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            random = new Random();
+            for (int i =0; i < dataGridView1.RowCount; i ++)
+            {
+                for (int j =0; j < dataGridView1.ColumnCount; j ++)
+                {
+                    dataGridView1.Rows[i].Cells[j].Value = random.Next(FirstB, SecondB);
+                }
+            }
+            for (int i = 0; i < dataGridView2.RowCount; i++)
+            {
+                for (int j = 0; j < dataGridView2.ColumnCount; j++)
+                {
+                    dataGridView2.Rows[i].Cells[j].Value = random.Next(FirstB, SecondB);
+                }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                DoSub();
+            }
         }
     }
 }
