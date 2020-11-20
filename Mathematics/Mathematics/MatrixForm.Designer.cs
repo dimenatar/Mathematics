@@ -111,22 +111,24 @@ namespace Mathematics
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.DarkSalmon;
             this.button1.Location = new System.Drawing.Point(53, 70);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(138, 23);
             this.button1.TabIndex = 3;
             this.button1.Text = "Задать размерность";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.DarkSalmon;
             this.button2.Location = new System.Drawing.Point(53, 371);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(138, 23);
             this.button2.TabIndex = 3;
             this.button2.Text = "Задать размерность";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox7
@@ -151,67 +153,77 @@ namespace Mathematics
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.Color.DarkSalmon;
             this.button4.Location = new System.Drawing.Point(53, 588);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(138, 23);
             this.button4.TabIndex = 3;
             this.button4.Text = "Задать значения";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.BackColor = System.Drawing.Color.Black;
+            this.radioButton1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.radioButton1.Location = new System.Drawing.Point(325, 254);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(80, 17);
             this.radioButton1.TabIndex = 4;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Вычитание";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.UseVisualStyleBackColor = false;
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
+            this.radioButton2.BackColor = System.Drawing.Color.Black;
+            this.radioButton2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.radioButton2.Location = new System.Drawing.Point(325, 311);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(120, 17);
             this.radioButton2.TabIndex = 4;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Обратная матрица";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.UseVisualStyleBackColor = false;
             // 
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
+            this.radioButton3.BackColor = System.Drawing.Color.Black;
+            this.radioButton3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.radioButton3.Location = new System.Drawing.Point(460, 254);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(85, 17);
             this.radioButton3.TabIndex = 4;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Умножение";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.UseVisualStyleBackColor = false;
             // 
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
+            this.radioButton4.BackColor = System.Drawing.Color.Black;
+            this.radioButton4.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.radioButton4.Location = new System.Drawing.Point(460, 311);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(177, 17);
             this.radioButton4.TabIndex = 4;
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Система линейных уравнений";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.UseVisualStyleBackColor = false;
             this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(576, 277);
+            this.button3.BackColor = System.Drawing.Color.DarkSalmon;
+            this.button3.Location = new System.Drawing.Point(589, 273);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(139, 23);
             this.button3.TabIndex = 5;
             this.button3.Text = "Высчитать";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // dataGridView3
@@ -220,7 +232,7 @@ namespace Mathematics
             this.dataGridView3.AllowUserToDeleteRows = false;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView3.Location = new System.Drawing.Point(790, 334);
+            this.dataGridView3.Location = new System.Drawing.Point(771, 152);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
             this.dataGridView3.Size = new System.Drawing.Size(422, 260);
@@ -230,6 +242,7 @@ namespace Mathematics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.WindowText;
             this.ClientSize = new System.Drawing.Size(1268, 638);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.button3);

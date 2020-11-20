@@ -132,8 +132,8 @@ namespace Mathematics
             {
                 if (dataGridView1.ColumnCount == dataGridView2.RowCount)
                 {
-                    dataGridView3.ColumnCount = dataGridView1.ColumnCount;
-                    dataGridView3.RowCount = dataGridView2.RowCount;
+                    dataGridView3.ColumnCount = dataGridView1.RowCount;
+                    dataGridView3.RowCount = dataGridView2.ColumnCount;
                     dataGridView3 = DoNotNull(dataGridView3);
                     for (int i = 0; i < dataGridView1.RowCount; i++)
                     {
@@ -149,6 +149,7 @@ namespace Mathematics
                     }
                     dataGridView3.Visible = true;
                 }
+                else MessageBox.Show("Несовпадение размерностей");
             }
     
             return dataGridView3;
@@ -163,13 +164,17 @@ namespace Mathematics
         }
         public static DataGridView MatrixEquals(DataGridView dataGridView1, DataGridView dataGridView2, DataGridView dataGridView3)
         {
-            double[][] array = GridToArray(dataGridView1, dataGridView2);
-            double[] newArray = GaussEliminationHelper.SolveLinearEquations(array);
-            dataGridView3.RowCount = 2;
-            dataGridView3.ColumnCount = dataGridView2.RowCount;
-            dataGridView3 = InputX(dataGridView3);
-            dataGridView3 = ArrayToGrid(newArray, dataGridView3);
-            dataGridView3.Visible = true;
+            if (DoCheckVoid(dataGridView2) && DoCheckVoid(dataGridView1) && dataGridView1.RowCount == dataGridView2.RowCount && dataGridView2.ColumnCount == 1)
+            {
+                double[][] array = GridToArray(dataGridView1, dataGridView2);
+                double[] newArray = GaussEliminationHelper.SolveLinearEquations(array);
+                dataGridView3.RowCount = 2;
+                dataGridView3.ColumnCount = dataGridView2.RowCount;
+                dataGridView3 = InputX(dataGridView3);
+                dataGridView3 = ArrayToGrid(newArray, dataGridView3);
+                dataGridView3.Visible = true;
+            }
+            else MessageBox.Show("Пустые поля либо вы поменяли размерности\n(Количество строк второй матрицы должно совпадать с количеством строк в первой матрице\nПри этом во второй матрице должен быть ОДИН столбец)\n¯|_(ツ)_|¯");
             return dataGridView3;
         }
     }
