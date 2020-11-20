@@ -46,6 +46,7 @@ namespace Mathematics
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -238,12 +239,24 @@ namespace Mathematics
             this.dataGridView3.Size = new System.Drawing.Size(422, 260);
             this.dataGridView3.TabIndex = 6;
             // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button5.Location = new System.Drawing.Point(785, 435);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(377, 36);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "Вывести в текстовый файл";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // MatrixForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowText;
             this.ClientSize = new System.Drawing.Size(1268, 638);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.radioButton4);
@@ -290,5 +303,6 @@ namespace Mathematics
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Button button5;
     }
 }

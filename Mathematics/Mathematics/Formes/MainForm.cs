@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Mathematics.Formes;
 namespace Mathematics
 {
     public partial class MainForm : Form
@@ -21,6 +21,12 @@ namespace Mathematics
         {
             MatrixForm matrixForm = new MatrixForm();
             matrixForm.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            NotLinearEqu notLinearEqu = new NotLinearEqu();
+            notLinearEqu.ShowDialog();
         }
     }
 }

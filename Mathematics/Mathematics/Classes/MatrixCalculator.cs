@@ -141,9 +141,7 @@ namespace Mathematics
                         {
                             for (int m = 0; m < dataGridView2.RowCount; m++)
                             {
-
                                 dataGridView3.Rows[i].Cells[j].Value = int.Parse(dataGridView3.Rows[i].Cells[j].Value.ToString()) + int.Parse(dataGridView1.Rows[i].Cells[m].Value.ToString()) * int.Parse(dataGridView2.Rows[m].Cells[j].Value.ToString());
-                                //MessageBox.Show((int.Parse(dataGridView3.Rows[i].Cells[j].Value.ToString()) + int.Parse(dataGridView3.Rows[i].Cells[m].Value.ToString()) * int.Parse(dataGridView2.Rows[m].Cells[j].Value.ToString())).ToString());
                             }
                         }
                     }

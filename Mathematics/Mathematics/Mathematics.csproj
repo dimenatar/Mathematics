@@ -46,46 +46,55 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthorisationForm.cs">
+    <Compile Include="Classes\EquLoader.cs" />
+    <Compile Include="Classes\NewtonCalculations.cs" />
+    <Compile Include="Formes\AuthorisationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AuthorisationForm.Designer.cs">
+    <Compile Include="Formes\AuthorisationForm.Designer.cs">
       <DependentUpon>AuthorisationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GaussEliminationHelper.cs" />
-    <Compile Include="InversingHelp.cs" />
-    <Compile Include="MainForm.cs">
+    <Compile Include="Classes\GaussEliminationHelper.cs" />
+    <Compile Include="Classes\InversingHelp.cs" />
+    <Compile Include="Formes\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Formes\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MatrixAnswerForm.cs">
+    <Compile Include="Classes\MatrixCalculator.cs" />
+    <Compile Include="Formes\MatrixForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MatrixAnswerForm.Designer.cs">
-      <DependentUpon>MatrixAnswerForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MatrixCalculator.cs" />
-    <Compile Include="MatrixForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MatrixForm.Designer.cs">
+    <Compile Include="Formes\MatrixForm.Designer.cs">
       <DependentUpon>MatrixForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formes\NotLinearEqu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formes\NotLinearEqu.Designer.cs">
+      <DependentUpon>NotLinearEqu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AuthorisationForm.resx">
+    <Compile Include="Formes\RegistrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formes\RegistrationForm.Designer.cs">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\User.cs" />
+    <EmbeddedResource Include="Formes\AuthorisationForm.resx">
       <DependentUpon>AuthorisationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Formes\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MatrixAnswerForm.resx">
-      <DependentUpon>MatrixAnswerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MatrixForm.resx">
+    <EmbeddedResource Include="Formes\MatrixForm.resx">
       <DependentUpon>MatrixForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formes\NotLinearEqu.resx">
+      <DependentUpon>NotLinearEqu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -96,6 +105,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Formes\RegistrationForm.resx">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

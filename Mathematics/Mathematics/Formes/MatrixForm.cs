@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
 namespace Mathematics
 {
     
@@ -19,7 +19,6 @@ namespace Mathematics
         private int FirstB = 0;
         private int SecondB = 2;
         private Random random;
-        MatrixAnswerForm matrixAnswerForm = new MatrixAnswerForm();
         public MatrixForm()
         {
             InitializeComponent();
@@ -121,7 +120,7 @@ namespace Mathematics
 
         private void textBox7_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsDigit(e.KeyChar) || (e.KeyChar == '-' && textBox7.TextLength == 0))
+            if (char.IsDigit(e.KeyChar) || (e.KeyChar == '-' && textBox7.TextLength == 0) || e.KeyChar == (char)Keys.Back)
             {
                 e.Handled = false;
             }
@@ -130,7 +129,7 @@ namespace Mathematics
 
         private void textBox8_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsDigit(e.KeyChar) || (e.KeyChar == '-' && textBox8.TextLength == 0))
+            if (char.IsDigit(e.KeyChar) || (e.KeyChar == '-' && textBox8.TextLength == 0) || e.KeyChar == (char)Keys.Back)
             {
                 e.Handled = false;
             }
@@ -201,6 +200,24 @@ namespace Mathematics
                 dataGridView2.ColumnCount = 1;
                 dataGridView2.RowCount = dataGridView1.RowCount;
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            for (int i =0; i < dataGridView3.RowCount; i ++)
+            {
+                for (int j =0; j < dataGridView3.ColumnCount; j ++)
+                {
+                    if (dataGridView3.Rows[i].Cells[j].Value != null)
+                    {
+                        stringBuilder.Append(dataGridView3.Rows[i].Cells[j].Value + " ");
+                    }
+                }
+                stringBuilder.Append("\n");
+            }
+            File.WriteAllText("MatrixAnswer.txt", stringBuilder.ToString());
+            MessageBox.Show("Текстовый файл успешно создан. Ищите его в дебаге");
         }
     }
 }
