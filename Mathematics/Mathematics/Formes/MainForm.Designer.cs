@@ -36,9 +36,15 @@ namespace Mathematics
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(37, 109);
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(35, 103);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 23);
+            this.button1.Size = new System.Drawing.Size(175, 37);
             this.button1.TabIndex = 0;
             this.button1.Text = "Matrix";
             this.button1.UseVisualStyleBackColor = true;
@@ -46,9 +52,15 @@ namespace Mathematics
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(232, 109);
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(269, 101);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(146, 23);
+            this.button2.Size = new System.Drawing.Size(256, 39);
             this.button2.TabIndex = 0;
             this.button2.Text = "Non linear equalations";
             this.button2.UseVisualStyleBackColor = true;
@@ -56,9 +68,15 @@ namespace Mathematics
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(452, 109);
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button3.Location = new System.Drawing.Point(583, 101);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(146, 23);
+            this.button3.Size = new System.Drawing.Size(222, 39);
             this.button3.TabIndex = 0;
             this.button3.Text = "Integral";
             this.button3.UseVisualStyleBackColor = true;
@@ -68,10 +86,12 @@ namespace Mathematics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(831, 490);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.ResumeLayout(false);

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Mathematics.Classes;
+using System.IO;
 namespace Mathematics.Formes
 {
     public partial class Integrals : Form
@@ -212,6 +213,66 @@ namespace Mathematics.Formes
                 e.Handled = false;
             }
             else e.Handled = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                CurvesDrawer curvesDrawer = new CurvesDrawer();
+                curvesDrawer.first = true;
+                curvesDrawer.Show();
+            }
+            else if (radioButton2.Checked)
+            {
+                if (textBox3.Text != "")
+                {
+                    CurvesDrawer curvesDrawer = new CurvesDrawer();
+                    curvesDrawer.second = true;
+                    curvesDrawer.koef1 = int.Parse(textBox3.Text);
+                    curvesDrawer.Show();
+                }
+                else MessageBox.Show("Введите коэффициент");
+            }
+            else if (radioButton3.Checked)
+            {
+                CurvesDrawer curvesDrawer = new CurvesDrawer();
+                curvesDrawer.third = true;
+                curvesDrawer.Show();
+            }
+            else if (radioButton4.Checked)
+            {
+                if (textBox4.Text != "")
+                {
+                    CurvesDrawer curvesDrawer = new CurvesDrawer();
+                    curvesDrawer.fourth = true;
+                    curvesDrawer.koef1 = int.Parse(textBox4.Text);
+                    curvesDrawer.Show();
+                }
+                else MessageBox.Show("Введите коэффициент");
+            }
+            else if (radioButton5.Checked)
+            {
+                if (textBox5.Text != "" && textBox6.Text != "" && textBox7.Text != "" && textBox8.Text != "" )
+                {
+                    CurvesDrawer curvesDrawer = new CurvesDrawer();
+                    curvesDrawer.fifth = true;
+                    curvesDrawer.koef1 = int.Parse(textBox5.Text);
+                    curvesDrawer.koef2 = int.Parse(textBox6.Text);
+                    curvesDrawer.koef3 = int.Parse(textBox7.Text);
+                    curvesDrawer.koef4 = int.Parse(textBox8.Text);
+                    curvesDrawer.Show();
+                }
+                else MessageBox.Show("Введите коэффициент");
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (label4.Text != "Ваш ответ будет ждать вас здесь")
+            {
+                File.WriteAllText("IntegralAnswer.txt", "(" + textBox1.Text + "," + textBox2.Text +")" +label1.Text + " " + label2.Text + " = " + label4.Text);
+            }
         }
     }
 }

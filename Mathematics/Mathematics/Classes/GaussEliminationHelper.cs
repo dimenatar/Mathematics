@@ -90,7 +90,14 @@ namespace Mathematics
                 val = rows[i][length - 1];
                 for (int x = length - 2; x > i - 1; x--)
                 {
-                    val -= rows[i][x] * result[x];
+                    try
+                    {
+                        val -= rows[i][x] * result[x];
+                    }
+                    catch (Exception)
+                    {
+                        return null;
+                    }
                 }
                 result[i] = val / rows[i][i];
 

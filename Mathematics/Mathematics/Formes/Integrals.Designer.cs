@@ -55,6 +55,7 @@ namespace Mathematics.Formes
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -97,9 +98,11 @@ namespace Mathematics.Formes
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Checked = true;
+            this.radioButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton1.Location = new System.Drawing.Point(633, 74);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(49, 17);
+            this.radioButton1.Size = new System.Drawing.Size(64, 24);
             this.radioButton1.TabIndex = 3;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "sin(x)";
@@ -109,9 +112,11 @@ namespace Mathematics.Formes
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
+            this.radioButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton2.Location = new System.Drawing.Point(633, 120);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(42, 17);
+            this.radioButton2.Size = new System.Drawing.Size(50, 24);
             this.radioButton2.TabIndex = 4;
             this.radioButton2.Text = "x^a";
             this.radioButton2.UseVisualStyleBackColor = true;
@@ -120,9 +125,11 @@ namespace Mathematics.Formes
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
+            this.radioButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton3.Location = new System.Drawing.Point(633, 165);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(53, 17);
+            this.radioButton3.Size = new System.Drawing.Size(69, 24);
             this.radioButton3.TabIndex = 5;
             this.radioButton3.Text = "cos(x)";
             this.radioButton3.UseVisualStyleBackColor = true;
@@ -131,9 +138,11 @@ namespace Mathematics.Formes
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
+            this.radioButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton4.Location = new System.Drawing.Point(633, 213);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(42, 17);
+            this.radioButton4.Size = new System.Drawing.Size(50, 24);
             this.radioButton4.TabIndex = 6;
             this.radioButton4.Text = "a^x";
             this.radioButton4.UseVisualStyleBackColor = true;
@@ -142,9 +151,11 @@ namespace Mathematics.Formes
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
+            this.radioButton5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton5.Location = new System.Drawing.Point(633, 254);
             this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(106, 17);
+            this.radioButton5.Size = new System.Drawing.Size(142, 24);
             this.radioButton5.TabIndex = 7;
             this.radioButton5.Text = "ax^3+bx^2+cx+d";
             this.radioButton5.UseVisualStyleBackColor = true;
@@ -153,10 +164,17 @@ namespace Mathematics.Formes
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(633, 326);
+            this.button1.Location = new System.Drawing.Point(633, 387);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 23);
+            this.button1.Size = new System.Drawing.Size(141, 35);
             this.button1.TabIndex = 8;
             this.button1.Text = "Ответ";
             this.button1.UseVisualStyleBackColor = false;
@@ -164,6 +182,7 @@ namespace Mathematics.Formes
             // 
             // hScrollBar1
             // 
+            this.hScrollBar1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.hScrollBar1.Location = new System.Drawing.Point(255, 43);
             this.hScrollBar1.Maximum = 10000;
             this.hScrollBar1.Minimum = 100;
@@ -186,7 +205,7 @@ namespace Mathematics.Formes
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(49, 375);
+            this.label4.Location = new System.Drawing.Point(32, 309);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(331, 25);
             this.label4.TabIndex = 10;
@@ -303,13 +322,39 @@ namespace Mathematics.Formes
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.button2.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(482, 326);
+            this.button2.Location = new System.Drawing.Point(393, 387);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 23);
+            this.button2.Size = new System.Drawing.Size(199, 35);
             this.button2.TabIndex = 8;
             this.button2.Text = "Построить график";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button3.Location = new System.Drawing.Point(37, 387);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(312, 35);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Вывести в текстовый файл";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Integrals
             // 
@@ -320,6 +365,7 @@ namespace Mathematics.Formes
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.hScrollBar1);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.radioButton5);
@@ -343,7 +389,7 @@ namespace Mathematics.Formes
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ForeColor = System.Drawing.Color.Transparent;
             this.Name = "Integrals";
             this.Text = "Integrals";
             this.Load += new System.EventHandler(this.Integrals_Load);
@@ -380,5 +426,6 @@ namespace Mathematics.Formes
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

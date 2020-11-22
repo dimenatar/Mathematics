@@ -5,13 +5,22 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Mathematics.Classes;
+using System.Drawing.Drawing2D;
 namespace Mathematics.Formes
 {
     public partial class CurvesDrawer : Form
     {
+        public bool first = false;
+        public bool second = false;
+        public bool third = false;
+        public bool fourth = false;
+        public bool fifth = false;
+        public int koef1 = 0;
+        public int koef2 = 0;
+        public int koef3 = 0;
+        public int koef4 = 0;
         public CurvesDrawer()
         {
             InitializeComponent();
@@ -57,17 +66,26 @@ namespace Mathematics.Formes
         }
 
         // The function.
-        private float F(float x)
+        private double First(float x)
         {
-            return -(x * x * x / 3 - 2 * x * x + 5);
+            return -(Math.Sin(x));
         }
-
-        // The function's derivative.
-        private float dFdx(float x)
+        private double Second(float x, float a)
         {
-            return -(x * x - 4 * x);
+            return -(Math.Pow(x, a));
         }
-
+        private double Third(float x)
+        {
+            return -(Math.Cos(x));
+        }
+        private double Fourth(float x, float a)
+        {
+            return -(Math.Pow(a, x));
+        }
+        private double Fifth(float x,float a,float b, float c,float d)
+        {
+            return -(a * Math.Pow(x, 3) + b * Math.Pow(x, 2) + c * x + d);
+        }
         // The most recent point clicked.
         private float X0 = 1, Y0 = 0;
 
@@ -93,6 +111,8 @@ namespace Mathematics.Formes
             e.Graphics.Transform = transformation;
             DrawGraph(e.Graphics);
         }
+        public Font MyFont = new Font("Arial", 0.6f, GraphicsUnit.World);
+        public SolidBrush SolidBrush = new SolidBrush(Color.Red);
         private void DrawGraph(Graphics gr)
         {
             gr.SmoothingMode = SmoothingMode.AntiAlias;
@@ -107,77 +127,80 @@ namespace Mathematics.Formes
                 for (int x = (int)(-xmax); x <= xmax; x++)
                 {
                     gr.DrawLine(axis_pen, x, -0.5f, x, 0.5f);
+                    gr.DrawString(x.ToString(), MyFont, SolidBrush, x, 0);
                 }
                 for (int y = (int)(-ymax); y <= ymax; y++)
                 {
                     gr.DrawLine(axis_pen, -0.5f, y, 0.5f, y);
+                    gr.DrawString(y.ToString(), MyFont, SolidBrush, 0, y * -1);
                 }
                 gr.DrawLine(axis_pen, -xmax, 0, xmax, 0);
                 gr.DrawLine(axis_pen, 0, -ymax, 0, ymax);
             }
 
             // Draw the curve.
-            using (Pen curve_pen = new Pen(Color.Green, 0))
+            using (Pen curve_pen = new Pen(Color.Crimson, 0))
             {
-                float y1, y2 = F(-10);
+                double y1 = 0;
+                double y2 = 0;
+                if (first)
+                {
+                    y1 = First(-10);
+                    y2 = First(-10);
+                }
+                else if (second)
+                {
+                    y1 = Second(-10, koef1);
+                    y2 = Second(-10, koef1);
+                }
+                else if (third)
+                {
+                    y1 = Third(-10);
+                    y2 = Third(-10);
+                }
+                else if (fourth)
+                {
+                    y1 = Fourth(-10, koef1);
+                    y2 = Fourth(-10, koef1);
+                }
+                else if (fifth)
+                {
+                    y1 = Fifth(-10, koef1,koef2,koef3,koef4);
+                    y2 = Fifth(-10, koef1, koef2, koef3, koef4);
+                }
                 const float step_size = 0.1f;
-                for (float x = -xmax + step_size; x <= xmax; x += step_size)
+                for (float x = -xmax/2 + step_size; x <= xmax/2; x += step_size)
                 {
                     y1 = y2;
-                    y2 = F(x);
-                    gr.DrawLine(curve_pen, x - step_size, y1, x, y2);
-                }
-            }
-
-            // Draw the point clicked.
-            using (Pen point_pen = new Pen(Color.Black, 0))
-            {
-                gr.DrawLine(point_pen, X0 - 0.25f, Y0 - 0.25f, X0 + 0.25f, Y0 + 0.25f);
-                gr.DrawLine(point_pen, X0 - 0.25f, Y0 + 0.25f, X0 + 0.25f, Y0 - 0.25f);
-            }
-
-            // Use Newton's method.
-            UseNewtonsMethod(gr, X0);
-        }
-
-        // Find a root by using Newton's method.
-        private void UseNewtonsMethod(Graphics gr, float x0)
-        {
-            const float cutoff = 0.0000001f;
-            const float tiny = 0.00001f;
-            const int max_iterations = 100;
-            float epsilon;
-            int iterations = 0;
-            using (StringFormat string_format = new StringFormat())
-            {
-                string_format.Alignment = StringAlignment.Center;
-                using (Pen guess_pen = new Pen(Color.Red, 0))
-                {
-                    do
+                    if (first)
                     {
-                        // Display this guess x0.
-                        iterations++;
-                        gr.DrawString(iterations.ToString(),
-                            this.Font, Brushes.Black, x0, iterations,
-                            string_format);
-                        gr.DrawLine(guess_pen, x0, iterations, x0, 0.25f);
-                        Console.WriteLine(iterations + ": " + x0);
-
-                        // Make sure x0 isn't on a flat spot.
-                        while (Math.Abs(dFdx(x0)) < tiny) x0 += tiny;
-
-                        // Calculate the next esxtimate for x0.
-                        epsilon = -F(x0) / dFdx(x0);
-                        x0 += epsilon;
-                    } while ((Math.Abs(epsilon) > cutoff) && (iterations < max_iterations));
-                    gr.FillEllipse(Brushes.Green, x0 - 0.25f, -0.25f, 0.5f, 0.5f);
+                        y2 = First(x);
+                    }
+                    else if (second)
+                    {
+                        y2 = Second(x, koef1);
+                    }
+                    else if (third)
+                    {
+                        y2 = Third(x);
+                    }
+                    else if (fourth)
+                    {
+                        y2 = Fourth(x, koef1);
+                    }
+                    else if (fifth)
+                    {
+                        y2 = Fifth(x, koef1, koef2, koef3, koef4);
+                    }
+                    try
+                    {
+                        gr.DrawLine(curve_pen, x - step_size, (float)y1, x, (float)y2);
+                    }
+                    catch (Exception) {  }
                 }
             }
-
-            this.Text = x0.ToString() + " +/-" +
-                epsilon.ToString() + " in " +
-                iterations.ToString() + " iterations";
         }
+ 
     }
 }
-}
+
