@@ -16,24 +16,71 @@ namespace Mathematics.Formes
         {
             InitializeComponent();
         }
-
+        private bool CheckBorders()
+        {
+            if (textBox1.Text != "" && textBox2.Text != "")
+                return true;
+            else return false;
+        }
+        private void ShowSinuc()
+        {
+            if (CheckBorders())
+                label4.Text = "Ответ: " + ((IntegralCalculations.LeftTriangle(IntegralCalculations.f, double.Parse(textBox1.Text), double.Parse(textBox2.Text), hScrollBar1.Value).ToString()));
+            else MessageBox.Show("Введите границы");
+        }
+        private void ShowXPow()
+        {
+            if (CheckBorders())
+            {
+                if (textBox3.Text != "")
+                {
+                    label4.Text = "Ответ: " + ((IntegralCalculations.LeftTriangle(IntegralCalculations.ff, double.Parse(textBox1.Text), double.Parse(textBox2.Text), hScrollBar1.Value, int.Parse(textBox3.Text)).ToString()));
+                }
+                else MessageBox.Show("Введите коэффициенты");
+            }
+            else MessageBox.Show("Введите границы");
+        }
+        private void ShowCosinus()
+        {
+            if (CheckBorders())
+            {
+                label4.Text = "Ответ: " + ((IntegralCalculations.LeftTriangle(IntegralCalculations.fff, double.Parse(textBox1.Text), double.Parse(textBox2.Text), hScrollBar1.Value).ToString()));
+            }
+            else MessageBox.Show("Введите границы");
+        }
+        private void ShowAPow()
+        {
+            if (CheckBorders())
+            {
+                if (textBox4.Text != "")
+                {
+                    label4.Text = "Ответ: " + ((IntegralCalculations.LeftTriangle(IntegralCalculations.ffff, double.Parse(textBox1.Text), double.Parse(textBox2.Text), hScrollBar1.Value, int.Parse(textBox4.Text)).ToString()));
+                }
+                else MessageBox.Show("Введите коэффициенты");
+            }
+            else MessageBox.Show("Введите границы");
+        }
+        private void ShowThisShit()
+        {
+            if (CheckBorders())
+            {
+                if (textBox5.Text != "" && textBox6.Text != ""&& textBox7.Text != ""&& textBox8.Text != "")
+                {
+                    label4.Text = "Ответ: " + ((IntegralCalculations.LeftTriangle(IntegralCalculations.fffff, double.Parse(textBox1.Text), double.Parse(textBox2.Text), hScrollBar1.Value, int.Parse(textBox8.Text), int.Parse(textBox5.Text), int.Parse(textBox6.Text), int.Parse(textBox7.Text)).ToString()));
+                }
+                else MessageBox.Show("Введите коэффициенты");
+            }
+            else MessageBox.Show("Введите границы");
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (radioButton1.Checked)
-            {
-                label4.Text="Ответ: " + ((IntegralCalculations.LeftTriangle(IntegralCalculations.f, double.Parse(textBox1.Text), double.Parse(textBox2.Text),hScrollBar1.Value).ToString()));
-            }
-            else if (radioButton2.Checked)
-            {
-                label4.Text = "Ответ: " + ((IntegralCalculations.LeftTriangle(IntegralCalculations.ff, double.Parse(textBox1.Text), double.Parse(textBox2.Text), hScrollBar1.Value, int.Parse(textBox3.Text)).ToString()));
-            }
-            else if (radioButton3.Checked) label4.Text = "Ответ: " + ((IntegralCalculations.LeftTriangle(IntegralCalculations.fff, double.Parse(textBox1.Text), double.Parse(textBox2.Text), hScrollBar1.Value).ToString()));
-            else if (radioButton4.Checked) label4.Text = "Ответ: " + ((IntegralCalculations.LeftTriangle(IntegralCalculations.ffff, double.Parse(textBox1.Text), double.Parse(textBox2.Text), hScrollBar1.Value).ToString()));
-            else if (radioButton5.Checked) label4.Text = "Ответ: " + ((IntegralCalculations.LeftTriangle(IntegralCalculations.fffff, double.Parse(textBox1.Text), double.Parse(textBox2.Text), hScrollBar1.Value).ToString()));
-            else
-            {
-
-            }
+            if (radioButton1.Checked) ShowSinuc();
+            else if (radioButton2.Checked) ShowXPow();
+            else if (radioButton3.Checked) ShowCosinus();
+            else if (radioButton4.Checked) ShowAPow();
+            else if (radioButton5.Checked) ShowThisShit();
+            else MessageBox.Show("Ошибка");
+            
         }
 
         private void hScrollBar1_ValueChanged(object sender, EventArgs e)
@@ -57,6 +104,7 @@ namespace Mathematics.Formes
                 textBox6.Visible = false;
                 textBox7.Visible = false;
                 textBox8.Visible = false;
+                label2.Text = "(x^a)dx";
             }
 
         }
@@ -77,6 +125,7 @@ namespace Mathematics.Formes
                 textBox6.Visible = false;
                 textBox7.Visible = false;
                 textBox8.Visible = false;
+                label2.Text = "(a^x)dx";
             }
         }
 
@@ -96,6 +145,7 @@ namespace Mathematics.Formes
                 textBox6.Visible = false;
                 textBox7.Visible = false;
                 textBox8.Visible = false;
+                label2.Text = "(cos(x))dx";
             }
         }
 
@@ -115,6 +165,7 @@ namespace Mathematics.Formes
                 textBox6.Visible = false;
                 textBox7.Visible = false;
                 textBox8.Visible = false;
+                label2.Text = "(sin(x))dx";
             }
         }
 
@@ -122,18 +173,19 @@ namespace Mathematics.Formes
         {
             if (radioButton5.Checked)
             {
-                label7.Visible = true;
+                label7.Visible = false;
                 label5.Visible = true;
-                label6.Visible = true;
+                label6.Visible = false;
                 label8.Visible = true;
                 label9.Visible = true;
                 label10.Visible = true;
                 textBox3.Visible = false;
                 textBox4.Visible = false;
-                textBox5.Visible = false;
-                textBox6.Visible = false;
-                textBox7.Visible = false;
-                textBox8.Visible = false;
+                textBox5.Visible = true;
+                textBox6.Visible = true;
+                textBox7.Visible = true;
+                textBox8.Visible = true;
+                label2.Text = "(ax^3+bx^2+cx+d)dx";
             }
         }
 
@@ -151,6 +203,15 @@ namespace Mathematics.Formes
             textBox6.Visible = false;
             textBox7.Visible = false;
             textBox8.Visible = false;
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == '-')
+            {
+                e.Handled = false;
+            }
+            else e.Handled = true;
         }
     }
 }

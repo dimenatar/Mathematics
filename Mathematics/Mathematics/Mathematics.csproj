@@ -57,6 +57,12 @@
     </Compile>
     <Compile Include="Classes\GaussEliminationHelper.cs" />
     <Compile Include="Classes\InversingHelp.cs" />
+    <Compile Include="Formes\CurvesDrawer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formes\CurvesDrawer.Designer.cs">
+      <DependentUpon>CurvesDrawer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formes\Integrals.cs">
       <SubType>Form</SubType>
     </Compile>
