@@ -17,6 +17,7 @@ namespace Mathematics.Formes
         public bool third = false;
         public bool fourth = false;
         public bool fifth = false;
+        public bool sixth = false;
         public int koef1 = 0;
         public int koef2 = 0;
         public int koef3 = 0;
@@ -85,6 +86,10 @@ namespace Mathematics.Formes
         private double Fifth(float x,float a,float b, float c,float d)
         {
             return -(a * Math.Pow(x, 3) + b * Math.Pow(x, 2) + c * x + d);
+        }
+        private double Sixth(float x, float a)
+        {
+            return -(Math.Cos(x - a));
         }
         // The most recent point clicked.
         private float X0 = 1, Y0 = 0;
@@ -191,6 +196,10 @@ namespace Mathematics.Formes
                     else if (fifth)
                     {
                         y2 = Fifth(x, koef1, koef2, koef3, koef4);
+                    }
+                    else if (sixth)
+                    {
+                        y2 = Sixth(x, koef1);
                     }
                     try
                     {

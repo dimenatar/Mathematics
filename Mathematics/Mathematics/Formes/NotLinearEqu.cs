@@ -67,5 +67,42 @@ namespace Mathematics.Formes
             }
             else MessageBox.Show("Выберите функцию");
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                if (CheckEmptyText(textBox3))
+                {
+                    CurvesDrawer curvesDrawer = new CurvesDrawer();
+                    curvesDrawer.sixth = true;
+                    curvesDrawer.koef1 = int.Parse(textBox3.Text);
+                    curvesDrawer.Show();
+                }
+            }
+            else if (radioButton2.Checked)
+            {
+                if (CheckEmptyText(textBox4))
+                {
+                    CurvesDrawer curvesDrawer = new CurvesDrawer();
+                    curvesDrawer.fourth = true;
+                    curvesDrawer.koef1 = int.Parse(textBox4.Text);
+                    curvesDrawer.Show();
+                }
+            }
+            else if (radioButton3.Checked)
+            {
+                if (CheckEmptyText(textBox5) && CheckEmptyText(textBox6) && CheckEmptyText(textBox7) && CheckEmptyText(textBox8))
+                {
+                    CurvesDrawer curvesDrawer = new CurvesDrawer();
+                    curvesDrawer.fifth = true;
+                    curvesDrawer.koef1 = int.Parse(textBox5.Text); 
+                    curvesDrawer.koef2 = int.Parse(textBox6.Text); 
+                    curvesDrawer.koef3 = int.Parse(textBox7.Text); 
+                    curvesDrawer.koef4 = int.Parse(textBox8.Text);
+                    curvesDrawer.Show();
+                }
+            }
+        }
     }
 }

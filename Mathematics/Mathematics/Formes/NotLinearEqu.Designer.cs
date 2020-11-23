@@ -42,6 +42,7 @@ namespace Mathematics.Formes
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // radioButton1
@@ -101,7 +102,7 @@ namespace Mathematics.Formes
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(550, 357);
+            this.button1.Location = new System.Drawing.Point(724, 377);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -154,12 +155,24 @@ namespace Mathematics.Formes
             this.textBox8.Size = new System.Drawing.Size(53, 20);
             this.textBox8.TabIndex = 1;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(611, 377);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "button1";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // NotLinearEqu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox7);
@@ -172,6 +185,7 @@ namespace Mathematics.Formes
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
+            this.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Name = "NotLinearEqu";
             this.Text = "NotLinearEqu";
             this.ResumeLayout(false);
@@ -194,5 +208,6 @@ namespace Mathematics.Formes
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Button button2;
     }
 }
