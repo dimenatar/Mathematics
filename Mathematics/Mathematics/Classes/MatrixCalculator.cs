@@ -109,9 +109,13 @@ namespace Mathematics
             if (DoCheckVoid(dataGridView3))
             {
                 double[][] array = MatrixCalculator.GridToArray(dataGridView1);
-                double[][] inverse = InversingHelp.MatrixInverse(array);
-                dataGridView3 = ArrayToGrid(inverse, dataGridView3, dataGridView1.RowCount, dataGridView1.ColumnCount);
-                dataGridView3.Visible = true;
+                if (CheckDeterminant(array, dataGridView1.RowCount,dataGridView1.ColumnCount))
+                {
+                    double[][] inverse = InversingHelp.MatrixInverse(array);
+                    dataGridView3 = ArrayToGrid(inverse, dataGridView3, dataGridView1.RowCount, dataGridView1.ColumnCount);
+                    dataGridView3.Visible = true;
+                }
+                else MessageBox.Show("Детерминант 0 как бэ");
             }
             return dataGridView3;
         }
@@ -174,6 +178,29 @@ namespace Mathematics
             }
             else MessageBox.Show("Пустые поля либо вы поменяли размерности\n(Количество строк второй матрицы должно совпадать с количеством строк в первой матрице\nПри этом во второй матрице должен быть ОДИН столбец)\n¯|_(ツ)_|¯");
             return dataGridView3;
+        }
+        public static bool CheckDeterminant(double[][] array, int n, int m)
+        {
+            float[,] temp = new float[n, m];
+            for (int i =0; i < n;i++)
+            {
+                for (int j =0; j < m;j++)
+                {
+                    temp[i, j] = (float)array[i][j];
+                }
+            }
+            if (Math.Truncate(InversingHelp.MatrixDeterminant(temp, n, m)) == 1 || Math.Truncate(InversingHelp.MatrixDeterminant(temp, n, m)) == 0)
+            {
+                
+                return false;
+            }
+            
+            else
+            {
+                MessageBox.Show(Math.Truncate(InversingHelp.MatrixDeterminant(temp, n, m)).ToString()); 
+                return true;
+                
+            }
         }
     }
 }
