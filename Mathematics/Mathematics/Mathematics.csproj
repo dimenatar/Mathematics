@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\EquLoader.cs" />
     <Compile Include="Classes\IntegralCalculations.cs" />
     <Compile Include="Classes\NewtonCalculations.cs" />
     <Compile Include="Formes\AuthorisationForm.cs">

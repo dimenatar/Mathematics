@@ -191,7 +191,6 @@ namespace Mathematics
             }
             if (Math.Truncate(InversingHelp.MatrixDeterminant(temp, n, m)) == 1 || Math.Truncate(InversingHelp.MatrixDeterminant(temp, n, m)) == 0)
             {
-                
                 return false;
             }
             
@@ -199,7 +198,6 @@ namespace Mathematics
             {
                 MessageBox.Show(Math.Truncate(InversingHelp.MatrixDeterminant(temp, n, m)).ToString()); 
                 return true;
-                
             }
         }
     }
