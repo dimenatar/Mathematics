@@ -87,7 +87,7 @@ namespace Mathematics
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.GridColor = System.Drawing.Color.Blue;
+            this.dataGridView1.GridColor = System.Drawing.Color.Red;
             this.dataGridView1.Location = new System.Drawing.Point(325, 12);
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -130,7 +130,7 @@ namespace Mathematics
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView2.GridColor = System.Drawing.Color.Blue;
+            this.dataGridView2.GridColor = System.Drawing.Color.Red;
             this.dataGridView2.Location = new System.Drawing.Point(325, 334);
             this.dataGridView2.Name = "dataGridView2";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -355,7 +355,7 @@ namespace Mathematics
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridView3.GridColor = System.Drawing.Color.Blue;
+            this.dataGridView3.GridColor = System.Drawing.Color.Red;
             this.dataGridView3.Location = new System.Drawing.Point(771, 152);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;

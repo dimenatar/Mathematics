@@ -34,21 +34,21 @@ namespace Mathematics.Formes
         {
             if (CheckEmptyText(textBox2)&& CheckEmptyText (textBox3))
             {
-                label1.Text = NewtonCalculations.GetRoot(NewtonCalculations.f, NewtonCalculations.fdX, int.Parse(textBox1.Text), int.Parse(textBox2.Text), int.Parse(textBox3.Text)).ToString();
+                label1.Text = NewtonCalculations.GetRoot(NewtonCalculations.f, NewtonCalculations.fdX, double.Parse(textBox1.Text), double.Parse(textBox2.Text), double.Parse(textBox3.Text)).ToString();
             }
         }
         private void ShowPow()
         {
             if (CheckEmptyText(textBox2) && CheckEmptyText(textBox4))
             {
-                label1.Text = NewtonCalculations.GetRoot(NewtonCalculations.ff, NewtonCalculations.ffdX, int.Parse(textBox1.Text), int.Parse(textBox2.Text), int.Parse(textBox4.Text)).ToString();
+                label1.Text = NewtonCalculations.GetRoot(NewtonCalculations.ff, NewtonCalculations.ffdX, double.Parse(textBox1.Text), double.Parse(textBox2.Text), double.Parse(textBox4.Text)).ToString();
             }
         }
         private void ShowHer()
         {
             if (CheckEmptyText(textBox1) && CheckEmptyText(textBox2) && CheckEmptyText(textBox5) && CheckEmptyText(textBox6) && CheckEmptyText(textBox7) && CheckEmptyText(textBox8))
             {
-                label1.Text = NewtonCalculations.GetRoot(NewtonCalculations.fff, NewtonCalculations.fffdX, int.Parse(textBox1.Text), int.Parse(textBox2.Text), int.Parse(textBox5.Text), int.Parse(textBox6.Text), int.Parse(textBox7.Text), int.Parse(textBox8.Text)).ToString();
+                label1.Text = NewtonCalculations.GetRoot(NewtonCalculations.fff, NewtonCalculations.fffdX, double.Parse(textBox1.Text), double.Parse(textBox2.Text), double.Parse(textBox5.Text), double.Parse(textBox6.Text), double.Parse(textBox7.Text), double.Parse(textBox8.Text)).ToString();
             }
         }
         private void button1_Click(object sender, EventArgs e)
