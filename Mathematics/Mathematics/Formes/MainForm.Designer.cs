@@ -47,7 +47,7 @@ namespace Mathematics
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(175, 37);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Matrix";
+            this.button1.Text = "Матрицы";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

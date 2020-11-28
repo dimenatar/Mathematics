@@ -390,8 +390,8 @@ namespace Mathematics.Formes
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.Transparent;
-            this.Name = "Integrals";
-            this.Text = "Integrals";
+            this.Name = "Интегралы";
+            this.Text = "Интегралы";
             this.Load += new System.EventHandler(this.Integrals_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

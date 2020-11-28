@@ -19,6 +19,10 @@ namespace Mathematics.Classes
             DataPattern.RowHeadersVisible = false;
             DataPattern.DefaultCellStyle.BackColor = Color.DarkSeaGreen;
             DataPattern.DefaultCellStyle.SelectionBackColor = Color.Blue;
+            DataPattern.AllowUserToAddRows = false;
+            DataPattern.AllowUserToDeleteRows = false;
+            
+            
             return DataPattern;
         }
         private static Random random = new Random();
