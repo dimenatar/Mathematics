@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\IntegralCalculations.cs" />
+    <Compile Include="Classes\MainTestBuilder.cs" />
+    <Compile Include="Classes\MatrixBuilder.cs" />
     <Compile Include="Classes\NewtonCalculations.cs" />
     <Compile Include="Formes\AuthorisationForm.cs">
       <SubType>Form</SubType>
@@ -87,6 +89,12 @@
     <Compile Include="Formes\NotLinearEqu.Designer.cs">
       <DependentUpon>NotLinearEqu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formes\TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formes\TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Formes\RegistrationForm.cs">
@@ -113,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formes\NotLinearEqu.resx">
       <DependentUpon>NotLinearEqu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formes\TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

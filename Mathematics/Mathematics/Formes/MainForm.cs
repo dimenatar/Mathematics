@@ -12,6 +12,7 @@ namespace Mathematics
 {
     public partial class MainForm : Form
     {
+        public TestForm testForm = new TestForm();
         public MainForm()
         {
             InitializeComponent();
@@ -33,6 +34,12 @@ namespace Mathematics
         {
             Integrals integrals = new Integrals();
             integrals.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+            testForm.ShowDialog();
         }
     }
 }
